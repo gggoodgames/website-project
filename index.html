@@ -38,12 +38,13 @@
             font-size: 28px;
             color: #333;
         }
-        nav {
+                nav {
             display: flex;
             align-items: center;
         }
         .nav-links {
             display: flex;
+            align-items: center; /* Ensure vertical alignment */
         }
         .nav-links a {
             color: #333;
@@ -51,12 +52,30 @@
             margin: 0 15px;
             font-weight: bold;
             transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            height: 40px; /* Ensuring consistent height */
         }
         .nav-links a:hover {
             color: #ff758f;
         }
         .contact-btn {
             background-color: #ff758f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px; /* Matches the nav link height */
+            margin-left: 15px; /* Ensure consistent spacing */
+        }
+        .contact-btn:hover {
+            background-color: #ff9770;
             color: #fff;
             border: none;
             padding: 10px 20px;
