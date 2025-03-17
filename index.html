@@ -77,23 +77,28 @@
             .nav-links {
                 display: none;
                 flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
+                position: fixed;
+                top: 0;
+                right: -250px;
                 background: white;
-                width: 100%;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                text-align: center;
+                width: 250px;
+                height: 100vh;
+                box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+                text-align: left;
+                padding-top: 60px;
+                transition: right 0.3s ease;
             }
             .nav-links a {
                 padding: 15px;
                 display: block;
+                text-align: left;
+                margin-left: 20px;
             }
             .menu-icon {
                 display: block;
             }
             .nav-links.active {
-                display: flex;
+                right: 0;
             }
         }
     </style>
@@ -116,7 +121,11 @@
     <script>
         function toggleMenu() {
             var navLinks = document.getElementById("navLinks");
-            navLinks.classList.toggle("active");
+            if (navLinks.classList.contains("active")) {
+                navLinks.classList.remove("active");
+            } else {
+                navLinks.classList.add("active");
+            }
         }
     </script>
 </body>
