@@ -248,14 +248,13 @@
 </style>
 
 <script>
-    function toggleMenu() {
-        const nav = document.getElementById("navbar");
-        if (nav.style.display === "flex") {
-            nav.style.display = "none";
-        } else {
-            nav.style.display = "flex";
-        }
-    }
+    var navigation = document.getElementById("navigation");
+function showtheMenu(){
+   navigation.style.right = "0";
+}
+function hidetheMenu(){
+   navigation.style.right = "-220px";
+}
 </script>
 
 <script>
