@@ -72,10 +72,11 @@
             display: none;
             font-size: 30px;
             cursor: pointer;
+            z-index: 1100;
         }
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                display: flex;
                 flex-direction: column;
                 position: fixed;
                 top: 0;
@@ -121,10 +122,10 @@
     <script>
         function toggleMenu() {
             var navLinks = document.getElementById("navLinks");
-            if (navLinks.classList.contains("active")) {
-                navLinks.classList.remove("active");
+            if (navLinks.style.right === "0px") {
+                navLinks.style.right = "-250px";
             } else {
-                navLinks.classList.add("active");
+                navLinks.style.right = "0px";
             }
         }
     </script>
