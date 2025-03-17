@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Logmer</title>
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Create and Showcase Amazing Logos!">
+    <meta name="author" content="Atreyu Trivs S. Salonga">
+    <link rel="icon" type="image/x-icon" href="logmerfavicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #eef1ee, #dfe6e9);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            background: #fff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #28a745;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        a {
+            color: #ff758f;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #28a745;
+            text-decoration: underline;
+        }
+        #time {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #28a745;
+        }
+        i {
+            color: #ff758f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Have any questions? Reach out to us!</p>
+        
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:salongaatreyutrivss@gmail.com">salongaatreyutrivss@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> Phone: <a href="tel:+639562502301">+639562502301</a></p>
+            <p><i class="fab fa-facebook"></i> Facebook: <a href="https://www.facebook.com/atreyutrivs.salonga" target="_blank">Atreyu Trivs Salonga</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: #23 Padiernos St., Sto Nino, Gapan City, Nueva Ecija, PH</p>
+            <p><i class="fas fa-clock"></i> Current Time: <span id="time"></span></p>
+        </div>
+    </div>
+    
+    <script>
+        function updateTime() {
+            let now = new Date();
+            document.getElementById('time').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
