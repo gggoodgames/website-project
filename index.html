@@ -38,83 +38,232 @@
             font-size: 28px;
             color: #333;
         }
-        nav {
-            display: flex;
-            align-items: center;
-        }
-        .nav-links {
-            display: flex;
-        }
-        .nav-links a {
+        header nav a {
             color: #333;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
             transition: color 0.3s ease;
         }
-        .nav-links a:hover {
+        header nav a:hover {
             color: #ff758f;
         }
-        .menu-icon {
-            display: none;
-            font-size: 30px;
+        .contact-btn {
+            background-color: #ff758f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
             cursor: pointer;
-            z-index: 1100;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        .contact-btn:hover {
+            background-color: #ff9770;
+        }
+        .hero {
+            background-image: url('Homepage BG.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; 
+            text-align: left;
+            position: relative;
+            color: #fff;
+            padding: 0 10%;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+            margin-top: 10px;
+        }
+        .hero .btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        .hero .btn:hover {
+            background-color: #218838;
+        }
+        #about {
+            background-color: #fff;
+            padding: 100px 10%;
+            text-align: left; 
+        }
+        #about h3 {
+            color: #28a745;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        #about h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 10px;
+        }
+        #about p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-top: 15px;
+            max-width: 70%;
+        }
+        #about a {
+            color: #000;
+            font-size: 1rem;
+            text-decoration: underline;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
         }
         @media (max-width: 768px) {
-            .nav-links {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                right: -250px;
-                background: white;
-                width: 250px;
-                height: 100vh;
-                box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
-                text-align: left;
-                padding-top: 60px;
-                transition: right 0.3s ease;
+            header {
+                padding: 15px 30px;
             }
-            .nav-links a {
-                padding: 15px;
-                display: block;
-                text-align: left;
-                margin-left: 20px;
+            .hero {
+                padding: 0 5%;
             }
-            .menu-icon {
-                display: block;
+            .hero h1 {
+                font-size: 4rem;
             }
-            .nav-links.active {
-                right: 0;
+            .hero p {
+                font-size: 1.2rem;
             }
+            .hero .btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+            header nav a {
+                margin: 0 10px;
+            }
+            #about {
+                padding: 50px 5%;
+            }
+            #about p {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<head>
+    ...
+    <style>
+        header nav a.active {
+            color: #ffd580;
+            border-bottom: 2px solid #ffd580;
         }
     </style>
 </head>
 <body>
     <header>
-        <h2 class="logo">LOGMER</h2>
-        <nav>
-            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-            <div class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
+    <h2 class="logo">LOGMER</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <div class="dropdown">
+            <a href="#more" class="dropbtn">More &#9662;</a>
+            <div class="dropdown-content">
                 <a href="#howitworks">How It Works</a>
-                <a href="#contact" class="contact-btn">Contact</a>
+                <a href="#faq">FAQ</a>
+                <a href="#testimonials">Testimonials</a>
             </div>
-        </nav>
-    </header>
+        </div>
+        <a href="#contact" class="contact-btn">Contact</a>
+    </nav>
+</header>
 
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background 0.3s ease;
+    }
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .dropbtn {
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+        padding: 0 15px;
+    }
+</style>
     <script>
-        function toggleMenu() {
-            var navLinks = document.getElementById("navLinks");
-            if (navLinks.style.right === "0px") {
-                navLinks.style.right = "-250px";
-            } else {
-                navLinks.style.right = "0px";
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("header nav a");
+
+            function changeActiveNav() {
+                let current = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120; 
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").includes(current)) {
+                        link.classList.add("active");
+                    }
+                });
             }
-        }
+
+            window.addEventListener("scroll", changeActiveNav);
+        });
     </script>
 </body>
-</html>
